@@ -7,9 +7,10 @@ public class MovimientoJugador : MonoBehaviour
     public float Velocidad = 5f;
     public GameObject balaPrefab; // Prefab de la bala
     public Transform puntoDeSalida; // Punto desde donde se disparará la bala
+    public Transform camara; // Transform de la cámara
+
     private Vector2 movimiento;
     private Rigidbody2D rb;
-
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
     private Animator animator;
@@ -40,7 +41,10 @@ public class MovimientoJugador : MonoBehaviour
         {
             Disparar();
         }
+
+        SeguirJugador(); // Llama a la función para seguir al jugador
     }
+
     private void Disparar()
     {
         if (movimiento != Vector2.zero)
@@ -51,7 +55,16 @@ public class MovimientoJugador : MonoBehaviour
 
             // Instancia el prefab de la bala
             GameObject bala = Instantiate(balaPrefab, puntoDeSalida.position, rotacionDisparo);
-            bala.GetComponent<Rigidbody2D>().velocity = movimiento.normalized * 10f; // Ajusta la velocidad de la bala según sea necesario
+            bala.GetComponent<Rigidbody2D>().velocity = movimiento.normalized * 10f; // Ajusta la velocidad de la bala
+        }
+    }
+
+    private void SeguirJugador()
+    {
+        // Ajusta la posición de la cámara para seguir al jugador
+        if (camara != null)
+        {
+            camara.position = new Vector3(transform.position.x, transform.position.y, camara.position.z);
         }
     }
 }
