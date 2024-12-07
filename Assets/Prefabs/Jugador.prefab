@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6082272433273600759}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Player
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 393374890270136792}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0605068, y: 0.30813393, z: 0}
+  m_LocalPosition: {x: 1.01, y: 0.30813393, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidad: 5
+  balaPrefab: {fileID: 0}
+  puntoDeSalida: {fileID: 8210511195233745977}
 --- !u!50 &6309325017212893662
 Rigidbody2D:
   serializedVersion: 4
