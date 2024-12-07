@@ -41,7 +41,6 @@ public class MovimientoJugador : MonoBehaviour
             Disparar();
         }
     }
-
     private void Disparar()
     {
         if (movimiento != Vector2.zero)
