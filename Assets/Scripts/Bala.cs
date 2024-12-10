@@ -13,13 +13,4 @@ public class Bala : MonoBehaviour
         // Destruye la bala después de 'tiempoVida' segundos
         Destroy(gameObject, tiempoVida);
     }
-
-    private void OnTriggerEnter2D(Collider2D colision)
-    {
-        // Destruye la bala al impactar con un objeto
-        if (colision.gameObject.tag != "Jugador")
-        {
-            Destroy(gameObject);
-        }
-    }
 }
